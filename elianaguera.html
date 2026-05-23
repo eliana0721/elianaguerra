@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliana Guerra | Portafolio Profesional</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f9f5ff',   // Lila lavanda ultra claro
+                            100: '#f4ebff',  // Lila suave para fondos de tarjetas
+                            200: '#e9d7fe',  // Lila medio claro
+                            500: '#b692f6',  // Lila vibrante medio
+                            600: '#9e77ed',  // Lila corporativo (marca principal)
+                            700: '#7f56d9',  // Lila sólido fuerte
+                            800: '#6941c6',  // Lila oscuro
+                            900: '#53389e',  // Lila profundo
+                            950: '#1c0d30',  // Negro con matiz lila
+                        },
+                        accent: {
+                            50: '#fafafa',
+                            500: '#d8b4fe',
+                            600: '#c084fc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animaciones personalizadas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* Custom scrollbar en tonos lila y negro */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7f56d9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9e77ed;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-zinc-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Marca -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="flex items-center space-x-2">
+                        <span class="bg-gradient-to-r from-brand-600 to-brand-800 text-white font-extrabold text-xl px-3 py-1.5 rounded-lg shadow-sm">EG</span>
+                        <span class="font-bold text-white tracking-tight hidden sm:block">Eliana Guerra</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu (Blanco con hover Lila) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Inicio</a>
+                    <a href="#sobre-mi" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Sobre Mí</a>
+                    <a href="#habilidades" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Habilidades</a>
+                    <a href="#formacion" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Formación</a>
+                    <a href="#demostración" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Laboratorio Práctico</a>
+                    <a href="#contacto" class="text-sm font-medium text-zinc-300 hover:text-brand-500 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button (Lila y Blanco) -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contacto" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all duration-200 hover:shadow transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-paper-plane mr-2"></i>Contratar Talento
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-brand-500 hover:bg-zinc-900 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <i id="menu-icon" class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="hidden md:hidden bg-black border-b border-zinc-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Inicio</a>
+                <a href="#sobre-mi" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Sobre Mí</a>
+                <a href="#habilidades" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Habilidades</a>
+                <a href="#formacion" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Formación</a>
+                <a href="#demostración" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Laboratorio Práctico</a>
+                <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-brand-500 hover:bg-zinc-900">Contacto</a>
+                <div class="pt-4 pb-2 border-t border-zinc-800 px-3">
+                    <a href="#contacto" class="w-full flex justify-center items-center bg-brand-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium shadow-sm">
+                        <i class="fa-regular fa-paper-plane mr-2"></i>Contratar Talento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-black via-zinc-950 to-zinc-900 py-20 lg:py-32 flex items-center">
+        <!-- Abstract Decorative Shapes en Lila -->
+        <div class="absolute inset-0 z-0 opacity-25">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-600 rounded-full filter blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-900 rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/30 px-3.5 py-1.5 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span class="text-xs font-semibold text-brand-300 tracking-wide uppercase">Buscando Prácticas Profesionales</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none">
+                        Eliana Guerra
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-medium text-brand-300">
+                        Asistente Administrativo en Formación
+                    </p>
+                    
+                    <p class="text-zinc-300 text-base sm:text-lg max-w-xl leading-relaxed">
+                        Estudiante activa de tercer semestre orientada a la excelencia organizativa, el soporte de equipos y la optimización de procesos administrativos de oficina. Lista para aportar valor desde el primer día.
+                    </p>
+
+                    <!-- Trust Pill Badges en Lila/Negro -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs px-3 py-1.5 rounded-md flex items-center">
+                            <i class="fa-regular fa-clock text-brand-400 mr-2"></i> Puntualidad
+                        </span>
+                        <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs px-3 py-1.5 rounded-md flex items-center">
+                            <i class="fa-regular fa-star text-brand-400 mr-2"></i> Honestidad
+                        </span>
+                        <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs px-3 py-1.5 rounded-md flex items-center">
+                            <i class="fa-regular fa-handshake text-brand-400 mr-2"></i> Respeto
+                        </span>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#contacto" class="inline-flex justify-center items-center bg-brand-600 hover:bg-brand-500 text-white font-medium px-6 py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-brand-900/30 text-center">
+                            Contactar Conmigo
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#demostración" class="inline-flex justify-center items-center bg-zinc-900 hover:bg-zinc-800 text-zinc-100 border border-zinc-800 font-medium px-6 py-3.5 rounded-xl transition-all duration-200 text-center">
+                            Ver Demostración de Trabajo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphics/Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glassmorphism Card (Negro, Lila y Blanco) -->
+                        <div class="bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-2xl text-white relative z-10">
+                            <div class="flex items-center space-x-4 border-b border-white/10 pb-4 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center font-bold text-lg text-white">
+                                    EG
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Eliana Guerra</h4>
+                                    <p class="text-xs text-zinc-300">Asistente Administrativo JR</p>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-3.5 text-sm text-zinc-200">
+                                <li class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-graduation-cap text-brand-400 w-5 text-center"></i>
+                                    <span>Tercer Semestre (Asistente Adm.)</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-calendar text-brand-400 w-5 text-center"></i>
+                                    <span>Edad: 19 Años</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-location-dot text-brand-400 w-5 text-center"></i>
+                                    <span>Disponible para Prácticas</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-bolt text-brand-400 w-5 text-center"></i>
+                                    <span>Disposición Inmediata para Aprender</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-6 pt-4 border-t border-white/10 text-center">
+                                <span class="text-xs text-brand-300 uppercase tracking-widest font-semibold block mb-2">Pilar Profesional</span>
+                                <p class="text-xs text-zinc-300 italic">"La organización meticulosa es el motor que impulsa el éxito de cualquier oficina empresarial."</p>
+                            </div>
+                        </div>
+
+                        <!-- Graphic Background Accents -->
+                        <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-dashed border-brand-500/30 rounded-2xl pointer-events-none z-0"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ SECTION -->
+    <section id="sobre-mi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Identidad Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">Sobre Mí & Valores Clave</h2>
+                <div class="w-16 h-1 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-zinc-600 mt-4 text-lg">
+                    Soy una joven de 19 años responsable e íntegra. Creo que la solidez de un asistente radica tanto en sus destrezas operativas como en su calidad ética y moral.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Bio Text -->
+                <div class="lg:col-span-6 flex flex-col justify-center space-y-6">
+                    <h3 class="text-2xl font-bold text-zinc-800">Mi Compromiso de Crecimiento</h3>
+                    <p class="text-zinc-600 leading-relaxed">
+                        Actualmente cursando el **tercer semestre de Asistente Administrativo**, busco una oportunidad en el mercado laboral para dar mis primeros pasos firmes. Mi enfoque radica en facilitar la comunicación y agilizar la organización interna de la oficina. 
+                    </p>
+                    <p class="text-zinc-600 leading-relaxed">
+                        Aunque cuento con poca experiencia previa, compenso esta brecha con una **curva de aprendizaje acelerada**, dedicación y un compromiso implacable por dominar las dinámicas específicas de su empresa.
+                    </p>
+                    
+                    <div class="p-5 bg-brand-50 border-l-4 border-brand-500 rounded-r-xl">
+                        <p class="text-zinc-700 italic font-medium">
+                            "No ofrezco solo habilidades técnicas, ofrezco la garantía de que sus documentos, registros y calendarios estarán en manos puntuales, respetuosas y transparentes."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Values Grid (Blanco, Negro y detalles Lila) -->
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    
+                    <!-- Respeto Card -->
+                    <div class="bg-zinc-50 hover:bg-white hover:shadow-xl transition-all duration-300 p-6 rounded-2xl border border-zinc-100 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-hands-praying text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-zinc-900 text-lg mb-2">Respeto</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            Trato considerado, empático y constructivo hacia superiores, compañeros de equipo y clientes.
+                        </p>
+                    </div>
+
+                    <!-- Honestidad Card -->
+                    <div class="bg-zinc-50 hover:bg-white hover:shadow-xl transition-all duration-300 p-6 rounded-2xl border border-zinc-100 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-zinc-900 text-lg mb-2">Honestidad</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            Transparencia y veracidad absolutas en la gestión de correspondencia, información confidencial e informes financieros.
+                        </p>
+                    </div>
+
+                    <!-- Puntualidad Card -->
+                    <div class="bg-zinc-50 hover:bg-white hover:shadow-xl transition-all duration-300 p-6 rounded-2xl border border-zinc-100 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+                            <i class="fa-regular fa-clock text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-zinc-900 text-lg mb-2">Puntualidad</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            Gestión óptima de los tiempos, cumplimiento de plazos establecidos y presencia puntual.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES SECTION -->
+    <section id="habilidades" class="py-20 bg-zinc-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">¿Qué Ofrezco?</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">Habilidades & Nivel de Competencia</h2>
+                <div class="w-16 h-1 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-zinc-600 mt-4 text-lg">
+                    Sólidas bases operativas con enfoque principal en herramientas de automatización de oficina esenciales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Competencias de Suite de Oficina en tonos lila y blanco -->
+                <div class="lg:col-span-6 bg-white p-8 rounded-2xl shadow-md space-y-6 border border-zinc-200">
+                    <h3 class="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Herramientas Técnicas</h3>
+
+                    <!-- Excel Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-zinc-700"><i class="fa-regular fa-file-excel text-brand-600 mr-2"></i>Microsoft Excel / Hojas de Cálculo</span>
+                            <span class="text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded">Avanzado (85%)</span>
+                        </div>
+                        <div class="w-full h-3 bg-zinc-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-500 rounded-full transition-all duration-1000" style="width: 85%;"></div>
+                        </div>
+                        <p class="text-xs text-zinc-500 italic">
+                            Fórmulas avanzadas, tablas dinámicas, filtrado de datos, formateo condicional y estructuración de presupuestos.
+                        </p>
+                    </div>
+
+                    <!-- Word Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-zinc-700"><i class="fa-regular fa-file-word text-brand-700 mr-2"></i>Microsoft Word / Documentación</span>
+                            <span class="text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded">Muy Competente (90%)</span>
+                        </div>
+                        <div class="w-full h-3 bg-zinc-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-600 rounded-full transition-all duration-1000" style="width: 90%;"></div>
+                        </div>
+                        <p class="text-xs text-zinc-500 italic">
+                            Redacción de circulares comerciales, estructuración jerárquica, tablas de contenido automáticas y correspondencia combinada.
+                        </p>
+                    </div>
+
+                    <!-- PowerPoint Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-zinc-700"><i class="fa-regular fa-file-powerpoint text-brand-800 mr-2"></i>Creación de Presentaciones / Diapositivas</span>
+                            <span class="text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded">Creativo (80%)</span>
+                        </div>
+                        <div class="w-full h-3 bg-zinc-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-700 rounded-full transition-all duration-1000" style="width: 80%;"></div>
+                        </div>
+                        <p class="text-xs text-zinc-500 italic">
+                            Diseño de diapositivas corporativas de alto impacto, transiciones fluidas, infografías claras y síntesis visual de ideas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Habilidades Blandas Administrativas -->
+                <div class="lg:col-span-6 flex flex-col justify-between">
+                    <div class="bg-white p-8 rounded-2xl shadow-md space-y-6 h-full flex flex-col justify-between border border-zinc-200">
+                        <div>
+                            <h3 class="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3 mb-4">Competencias de Oficina</h3>
+                            <p class="text-sm text-zinc-600 mb-6">
+                                Junto al software técnico, he desarrollado un set de competencias críticas para la correcta fluidez operativa de su organización:
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-start space-x-3 p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+                                    <i class="fa-solid fa-folder-open text-brand-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-zinc-800 text-sm">Gestión de Archivo</h4>
+                                        <p class="text-xs text-zinc-500">Ordenamiento físico y digital de manera sistemática y lógica.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3 p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+                                    <i class="fa-solid fa-envelope text-brand-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-zinc-800 text-sm">Redacción Comercial</h4>
+                                        <p class="text-xs text-zinc-500">Comunicaciones fluidas, de tono respetuoso y correcta gramática.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3 p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+                                    <i class="fa-solid fa-calendar-days text-brand-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-zinc-800 text-sm">Gestión del Tiempo</h4>
+                                        <p class="text-xs text-zinc-500">Organización rigurosa de agendas, calendarios y recordatorios.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3 p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+                                    <i class="fa-solid fa-phone-volume text-brand-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-zinc-800 text-sm">Atención Telefónica</h4>
+                                        <p class="text-xs text-zinc-500">Servicio cortés, recolección precisa de mensajes y redirección efectiva.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-zinc-100 bg-brand-50 p-4 rounded-xl flex items-center space-x-4">
+                            <i class="fa-solid fa-circle-info text-brand-600 text-2xl flex-shrink-0"></i>
+                            <span class="text-xs text-brand-950 leading-relaxed font-medium">
+                                El 100% de mis conocimientos prácticos han sido probados y validados a lo largo de mis proyectos académicos en el programa de formación.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMACIÓN SECTION -->
+    <section id="formacion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Trayectoria Académica</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">Formación Profesional</h2>
+                <div class="w-16 h-1 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-zinc-600 mt-4 text-lg">
+                    Construyendo bases sólidas para brindar un soporte excepcional a las operaciones administrativas.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-zinc-200 pl-6 ml-4 space-y-12">
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="relative">
+                        <!-- Dot Lila -->
+                        <div class="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-brand-600 shadow-sm flex items-center justify-center"></div>
+                        
+                        <div class="bg-zinc-50 p-6 rounded-2xl border border-zinc-100 hover:shadow-md transition-shadow">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                                <div>
+                                    <span class="text-brand-700 font-semibold text-xs uppercase bg-brand-100 px-2.5 py-1 rounded-md">En Curso</span>
+                                    <h3 class="text-xl font-bold text-zinc-800 mt-2">Tecnólogo en Asistente Administrativo</h3>
+                                </div>
+                                <span class="text-sm font-medium text-zinc-500 mt-1 sm:mt-0"><i class="fa-regular fa-calendar-alt mr-1"></i>2024 - Presente</span>
+                            </div>
+                            <p class="font-semibold text-zinc-600 mb-2">Tercer Semestre Actual</p>
+                            <p class="text-sm text-zinc-600 leading-relaxed">
+                                Formación estructurada centrada en contabilidad general, archivo documental corporativo, redacción oficial comercial, gestión de base de datos de clientes, relaciones humanas e informática para oficinas.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-white px-2 py-1 rounded border border-zinc-200 text-xs text-zinc-600 font-medium">Contabilidad Básica</span>
+                                <span class="bg-white px-2 py-1 rounded border border-zinc-200 text-xs text-zinc-600 font-medium">Correspondencia Mercantil</span>
+                                <span class="bg-white px-2 py-1 rounded border border-zinc-200 text-xs text-zinc-600 font-medium">Ofimática</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative">
+                        <!-- Dot -->
+                        <div class="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-zinc-300 shadow-sm"></div>
+                        
+                        <div class="bg-zinc-50 p-6 rounded-2xl border border-zinc-100 hover:shadow-md transition-shadow">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                                <div>
+                                    <span class="text-zinc-500 font-semibold text-xs uppercase bg-zinc-200 px-2.5 py-1 rounded-md">Completado</span>
+                                    <h3 class="text-xl font-bold text-zinc-800 mt-2">Bachiller Académico</h3>
+                                </div>
+                                <span class="text-sm font-medium text-zinc-500 mt-1 sm:mt-0"><i class="fa-regular fa-calendar-alt mr-1"></i>Graduación: 2023</span>
+                            </div>
+                            <p class="font-semibold text-zinc-600 mb-2">Formación Secundaria Básica</p>
+                            <p class="text-sm text-zinc-600 leading-relaxed">
+                                Excelencia y enfoque en humanidades e informática. Miembro destacado de actividades organizacionales internas de la institución.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO DE TRABAJO (LABORATORIO PRÁCTICO) -->
+    <section id="demostración" class="py-20 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-400 font-semibold text-sm uppercase tracking-wider">Demostración Interactiva</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Laboratorio Práctico Administrativo</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-zinc-400 mt-4 text-base sm:text-lg">
+                    Pruebe una simulación en vivo de mis competencias ofimáticas operando directamente los siguientes demos interactivos.
+                </p>
+            </div>
+
+            <!-- Tabs buttons (Negro, Bordes Lila) -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 border-b border-zinc-800 pb-4">
+                <button onclick="switchTab('excel')" id="btn-tab-excel" class="px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-600 text-white">
+                    <i class="fa-regular fa-file-excel mr-2"></i>Simulador de Hojas de Cálculo (Excel)
+                </button>
+                <button onclick="switchTab('document')" id="btn-tab-document" class="px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-zinc-900 text-zinc-300 hover:text-white">
+                    <i class="fa-regular fa-file-word mr-2"></i>Documentación (Word Preview)
+                </button>
+            </div>
+
+            <!-- Tab content: Excel -->
+            <div id="tab-excel" class="space-y-6">
+                <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-white flex items-center">
+                                <span class="w-3 h-3 bg-brand-500 rounded-full mr-2"></span>
+                                Simulador Interactivo de Control de Gastos de Oficina
+                            </h3>
+                            <p class="text-xs text-zinc-400 mt-1">
+                                Pruebe mi lógica ingresando filas ficticias. La tabla calcula sumas automáticas simulando el uso de fórmulas condicionales de Excel.
+                            </p>
+                        </div>
+                        <button onclick="resetExcelDemo()" class="text-xs text-zinc-300 hover:text-white bg-zinc-800 hover:bg-zinc-700 px-3 py-1.5 rounded-md transition-colors border border-zinc-700">
+                            <i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar Datos
+                        </button>
+                    </div>
+
+                    <!-- Spreadsheet Simulation -->
+                    <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-black">
+                        <table class="w-full text-left text-xs min-w-[600px]">
+                            <thead class="bg-zinc-950 border-b border-zinc-800 text-zinc-400 uppercase tracking-wider">
+                                <tr>
+                                    <th class="p-3">ID</th>
+                                    <th class="p-3">Concepto/Descripción</th>
+                                    <th class="p-3">Categoría</th>
+                                    <th class="p-3 text-right">Monto ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="excel-rows" class="divide-y divide-zinc-900 text-zinc-300">
+                                <!-- Dynamic rows go here -->
+                            </tbody>
+                            <tfoot class="bg-zinc-950 font-bold border-t border-zinc-800 text-white text-sm">
+                                <tr>
+                                    <td colspan="3" class="p-3 text-right">Monto Total de Gastos del Mes:</td>
+                                    <td id="excel-total" class="p-3 text-right text-brand-300">$0.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- Excel Form -->
+                    <div class="mt-6 p-4 bg-zinc-900 rounded-xl border border-zinc-800 space-y-4">
+                        <h4 class="text-sm font-semibold text-zinc-200">Añadir Nuevo Registro</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">Concepto</label>
+                                <input id="excel-concept" type="text" placeholder="Ej: Papelería, Café, etc." class="w-full text-xs bg-black border border-zinc-800 text-white rounded p-2 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">Categoría</label>
+                                <select id="excel-category" class="w-full text-xs bg-black border border-zinc-800 text-white rounded p-2 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                                    <option value="Insumos Oficina">Insumos Oficina</option>
+                                    <option value="Mantenimiento">Mantenimiento</option>
+                                    <option value="Cafetería">Cafetería</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">Monto ($)</label>
+                                <div class="flex space-x-2">
+                                    <input id="excel-amount" type="number" min="1" placeholder="Ej: 45" class="w-full text-xs bg-black border border-zinc-800 text-white rounded p-2 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                                    <button onclick="addExcelRow()" class="bg-brand-600 hover:bg-brand-500 px-4 rounded text-xs text-white font-bold transition-colors">Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab content: Word Document Preview -->
+            <div id="tab-document" class="hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    
+                    <!-- Left Configuration Panel -->
+                    <div class="lg:col-span-4 bg-zinc-950 p-6 rounded-2xl border border-zinc-800 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white mb-4">Plantilla de Memorándum Comercial</h3>
+                            <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+                                Personalice el destinatario y el mensaje a continuación para observar cómo redacto correspondencia oficial con estructura y jerarquía corporativa limpia.
+                            </p>
+                            
+                            <div class="space-y-3 text-xs">
+                                <div>
+                                    <label class="block text-zinc-400 mb-1">Destinatario (Nombre / Cargo)</label>
+                                    <input oninput="updateDocPreview()" id="doc-to" type="text" value="Dr. Carlos Mendoza - Director de Finanzas" class="w-full bg-black border border-zinc-800 rounded p-2.5 text-zinc-200 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-zinc-400 mb-1">Asunto</label>
+                                    <input oninput="updateDocPreview()" id="doc-subject" type="text" value="Entrega de informes del balance mensual consolidado" class="w-full bg-black border border-zinc-800 rounded p-2.5 text-zinc-200 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-zinc-400 mb-1">Cuerpo del Memorándum</label>
+                                    <textarea oninput="updateDocPreview()" id="doc-body" rows="4" class="w-full bg-black border border-zinc-800 rounded p-2.5 text-zinc-200 focus:ring-1 focus:ring-brand-500 focus:outline-none">Por medio de la presente, me complace adjuntar los informes consolidados correspondientes a los cierres financieros de este ciclo escolar. He verificado meticulosamente cada balance de saldos con el fin de que las decisiones gerenciales se sustenten en información verídica y altamente organizada. Quedo atenta a sus oportunos comentarios.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-t border-zinc-800">
+                            <span class="text-[10px] text-brand-400 font-semibold block uppercase tracking-wider">Estándar Aplicado</span>
+                            <p class="text-[11px] text-zinc-400 italic mt-1">Estructurado según normas técnicas de documentación organizacional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Live Render (Blanco Impecable con detalles Lila) -->
+                    <div class="lg:col-span-8 bg-white text-zinc-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between border border-zinc-300 min-h-[400px]">
+                        <div>
+                            <!-- Document Header -->
+                            <div class="flex justify-between items-center border-b-2 border-zinc-800 pb-4 mb-6">
+                                <div>
+                                    <h4 class="font-bold text-zinc-900 text-lg uppercase tracking-wide">MEMORÁNDUM</h4>
+                                    <p class="text-[10px] text-zinc-500">Ref: ADM-2026-003</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-brand-700 text-xs">ELIANA GUERRA</p>
+                                    <p class="text-[9px] text-zinc-500">Soporte Administrativo</p>
+                                </div>
+                            </div>
+
+                            <!-- Document Metadata Grid -->
+                            <div class="grid grid-cols-12 gap-2 text-xs mb-6 border-b border-zinc-100 pb-4">
+                                <div class="col-span-3 font-semibold text-zinc-500">PARA:</div>
+                                <div id="preview-to" class="col-span-9 font-bold text-zinc-800">Dr. Carlos Mendoza - Director de Finanzas</div>
+
+                                <div class="col-span-3 font-semibold text-zinc-500">DE:</div>
+                                <div class="col-span-9 font-bold text-zinc-800">Eliana Guerra - Asistente en Prácticas</div>
+
+                                <div class="col-span-3 font-semibold text-zinc-500">FECHA:</div>
+                                <div class="col-span-9 text-zinc-700">23 de Mayo de 2026</div>
+
+                                <div class="col-span-3 font-semibold text-zinc-500">ASUNTO:</div>
+                                <div id="preview-subject" class="col-span-9 font-bold text-brand-700">Entrega de informes del balance mensual consolidado</div>
+                            </div>
+
+                            <!-- Document Body -->
+                            <div id="preview-body" class="text-xs text-zinc-700 leading-relaxed whitespace-pre-line">
+                                Por medio de la presente, me complace adjuntar los informes consolidados correspondientes a los cierres financieros de este ciclo escolar. He verificado meticulosamente cada balance de saldos con el fin de que las decisiones gerenciales se sustenten en información verídica y altamente organizada. Quedo atenta a sus oportunos comentarios.
+                            </div>
+                        </div>
+
+                        <!-- Document Footer/Signature -->
+                        <div class="mt-8 border-t border-zinc-100 pt-4 flex justify-between items-end">
+                            <div class="text-[10px] text-zinc-400">Documento de solo lectura interactivo</div>
+                            <div class="text-right">
+                                <div class="border-t border-zinc-400 w-32 ml-auto mb-1"></div>
+                                <p class="text-[10px] font-bold text-zinc-800">Eliana Guerra</p>
+                                <p class="text-[8px] text-zinc-500">Firma Autorizada</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="py-20 bg-zinc-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">¡Contáctame Ahora!</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">Iniciar una Conversación</h2>
+                <div class="w-16 h-1 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-zinc-600 mt-4 text-lg">
+                    ¿Tiene una vacante de prácticas, un puesto administrativo vacante o simplemente alguna duda profesional? ¡Escríbame hoy mismo!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+                
+                <!-- Contact Direct Methods -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-900 mb-4">Información de Contacto</h3>
+                        <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+                            Siempre me esfuerzo por responder todos los correos electrónicos o llamadas en un plazo de **24 horas hábiles**.
+                        </p>
+
+                        <div class="space-y-4">
+                            <!-- Email Method -->
+                            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-zinc-200">
+                                <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600">
+                                    <i class="fa-regular fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-400 uppercase font-semibold">Correo Electrónico</p>
+                                    <a href="mailto:eliana.guerra@example.com" class="text-sm font-bold text-zinc-800 hover:text-brand-600">eliana.guerra@example.com</a>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Method -->
+                            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-zinc-200">
+                                <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600">
+                                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-400 uppercase font-semibold">Redes Sociales</p>
+                                    <a href="#" class="text-sm font-bold text-zinc-800 hover:text-brand-600">linkedin.com/in/eliana-guerra</a>
+                                </div>
+                            </div>
+
+                            <!-- Location Method -->
+                            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-zinc-200">
+                                <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-400 uppercase font-semibold">Ubicación</p>
+                                    <p class="text-sm font-bold text-zinc-800">Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Advice Callout (Lila / Dorado Suave) -->
+                    <div class="p-4 bg-purple-50 border-l-4 border-brand-500 rounded-r-xl text-xs text-brand-950 leading-relaxed font-medium border-y border-r border-brand-100">
+                        <i class="fa-regular fa-circle-check text-brand-600 mr-2 text-sm"></i>
+                        Este formulario de contacto está conectado a un validador interactivo que emite notificaciones inmediatas en pantalla al simular su envío con éxito.
+                    </div>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-md border border-zinc-200">
+                    <h3 class="text-xl font-bold text-zinc-900 mb-6 border-b border-zinc-100 pb-3">Formulario de Envío Seguro</h3>
+                    
+                    <!-- Dynamic validation notification container -->
+                    <div id="form-message" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-600 mb-1.5">Nombre Completo <span class="text-rose-500">*</span></label>
+                            <input id="form-name" type="text" placeholder="Ej: Sr. Andrés Ocampo" class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:bg-white focus:outline-none transition-all">
+                            <span id="err-name" class="hidden text-rose-500 text-[10px] mt-1 font-semibold">El nombre completo es requerido.</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-600 mb-1.5">Correo Electrónico Corporativo <span class="text-rose-500">*</span></label>
+                            <input id="form-email" type="email" placeholder="Ej: andre.ocampo@empresa.com" class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:bg-white focus:outline-none transition-all">
+                            <span id="err-email" class="hidden text-rose-500 text-[10px] mt-1 font-semibold">Por favor, ingrese un correo válido de contacto.</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-600 mb-1.5">Asunto / Puesto de Interés <span class="text-rose-500">*</span></label>
+                            <input id="form-subject" type="text" placeholder="Ej: Vacante de Asistente de Oficina" class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:bg-white focus:outline-none transition-all">
+                            <span id="err-subject" class="hidden text-rose-500 text-[10px] mt-1 font-semibold">El asunto es un campo obligatorio.</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-600 mb-1.5">Mensaje o Propuesta Laboral <span class="text-rose-500">*</span></label>
+                            <textarea id="form-text" rows="4" placeholder="Estimada Eliana, me pongo en contacto con usted..." class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:bg-white focus:outline-none transition-all"></textarea>
+                            <span id="err-text" class="hidden text-rose-500 text-[10px] mt-1 font-semibold">Escriba una pequeña nota para poder responderle de manera asertiva.</span>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold p-3.5 rounded-lg text-sm shadow-md transition-all duration-200 hover:shadow transform hover:-translate-y-0.5">
+                            <i class="fa-regular fa-paper-plane mr-2"></i>Enviar Mensaje de Contacto
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-800 py-12 text-zinc-400 mt-auto text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Branding/Name -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <span class="bg-brand-600 text-white font-extrabold text-sm px-2.5 py-1 rounded shadow-sm w-max">EG</span>
+                    <p class="font-bold text-white text-base">Eliana Guerra</p>
+                    <p class="text-xs text-zinc-400">Asistente Administrativo | Tercer Semestre</p>
+                </div>
+
+                <!-- Footer Quicklinks -->
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#inicio" class="hover:text-brand-400 transition-colors">Inicio</a>
+                    <a href="#sobre-mi" class="hover:text-brand-400 transition-colors">Sobre Mí</a>
+                    <a href="#habilidades" class="hover:text-brand-400 transition-colors">Habilidades</a>
+                    <a href="#formacion" class="hover:text-brand-400 transition-colors">Formación</a>
+                    <a href="#demostración" class="hover:text-brand-400 transition-colors">Laboratorio Práctico</a>
+                </div>
+
+                <!-- Social and Contact info -->
+                <div class="flex space-x-4">
+                    <a href="mailto:eliana.guerra@example.com" class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all duration-200" title="Correo">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all duration-200" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+                <p>&copy; 2026 Eliana Guerra. Todos los derechos reservados.</p>
+                <div class="flex space-x-4">
+                    <p>Diseño Web Profesional y Accesible</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // MOBILE MENU TOGGLE
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+
+            if (isExpanded) {
+                menuIcon.className = 'fas fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fas fa-times text-xl';
+            }
+        });
+
+        // Close menu on mobile nav links click
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fas fa-bars text-xl';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // TABS FOR PRACTICAL LABS
+        function switchTab(tabName) {
+            const btnExcel = document.getElementById('btn-tab-excel');
+            const btnDoc = document.getElementById('btn-tab-document');
+            const tabExcel = document.getElementById('tab-excel');
+            const tabDoc = document.getElementById('tab-document');
+
+            if (tabName === 'excel') {
+                btnExcel.className = 'px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-600 text-white';
+                btnDoc.className = 'px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-zinc-900 text-zinc-300 hover:text-white';
+                tabExcel.classList.remove('hidden');
+                tabDoc.classList.add('hidden');
+            } else if (tabName === 'document') {
+                btnDoc.className = 'px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-600 text-white';
+                btnExcel.className = 'px-4 py-2.5 rounded-xl font-semibold text-sm transition-all bg-zinc-900 text-zinc-300 hover:text-white';
+                tabDoc.classList.remove('hidden');
+                tabExcel.classList.add('hidden');
+                updateDocPreview(); // Ensure live render matches on switch
+            }
+        }
+
+        // SIMULATED EXCEL SHEET SCRIPTING
+        let initialExpenses = [
+            { id: 1, concept: 'Resmas de papel carta (x5)', category: 'Insumos Oficina', amount: 35 },
+            { id: 2, concept: 'Repuestos de bolígrafos y carpetas', category: 'Insumos Oficina', amount: 18 },
+            { id: 3, concept: 'Insumos de limpieza y desinfección', category: 'Mantenimiento', amount: 45 },
+            { id: 4, concept: 'Café premium e insumos cafetería', category: 'Cafetería', amount: 25 }
+        ];
+
+        let currentExpenses = [...initialExpenses];
+
+        function renderExcelTable() {
+            const tbody = document.getElementById('excel-rows');
+            const totalCell = document.getElementById('excel-total');
+            tbody.innerHTML = '';
+            
+            let total = 0;
+
+            currentExpenses.forEach(expense => {
+                total += expense.amount;
+                const row = document.createElement('tr');
+                row.className = 'border-b border-zinc-900 hover:bg-zinc-900/40 transition-colors';
+                row.innerHTML = `
+                    <td class="p-3 text-zinc-500 font-mono">00${expense.id}</td>
+                    <td class="p-3 font-medium text-white">${expense.concept}</td>
+                    <td class="p-3">
+                        <span class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-zinc-900 text-zinc-300 border border-zinc-800">
+                            ${expense.category}
+                        </span>
+                    </td>
+                    <td class="p-3 text-right text-brand-300 font-mono">$${expense.amount.toFixed(2)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            totalCell.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function addExcelRow() {
+            const conceptInput = document.getElementById('excel-concept');
+            const categorySelect = document.getElementById('excel-category');
+            const amountInput = document.getElementById('excel-amount');
+
+            const concept = conceptInput.value.trim();
+            const category = categorySelect.value;
+            const amount = parseFloat(amountInput.value);
+
+            if (!concept) {
+                conceptInput.focus();
+                return;
+            }
+            if (isNaN(amount) || amount <= 0) {
+                amountInput.focus();
+                return;
+            }
+
+            const newId = currentExpenses.length > 0 ? currentExpenses[currentExpenses.length - 1].id + 1 : 1;
+            
+            currentExpenses.push({
+                id: newId,
+                concept: concept,
+                category: category,
+                amount: amount
+            });
+
+            renderExcelTable();
+
+            // Clear inputs
+            conceptInput.value = '';
+            amountInput.value = '';
+        }
+
+        function resetExcelDemo() {
+            currentExpenses = [...initialExpenses];
+            renderExcelTable();
+        }
+
+        // WORD DOCUMENT PREVIEW INTERACTIVITY
+        function updateDocPreview() {
+            const toVal = document.getElementById('doc-to').value;
+            const subVal = document.getElementById('doc-subject').value;
+            const bodyVal = document.getElementById('doc-body').value;
+
+            document.getElementById('preview-to').textContent = toVal || 'No especificado';
+            document.getElementById('preview-subject').textContent = subVal || 'Sin asunto';
+            document.getElementById('preview-body').textContent = bodyVal || 'Escriba un cuerpo de memorándum...';
+        }
+
+        // CONTACT FORM VALIDATION WITH ZERO ALERTS
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            // Inputs
+            const name = document.getElementById('form-name');
+            const email = document.getElementById('form-email');
+            const subject = document.getElementById('form-subject');
+            const text = document.getElementById('form-text');
+
+            // Errors text
+            const errName = document.getElementById('err-name');
+            const errEmail = document.getElementById('err-email');
+            const errSubject = document.getElementById('err-subject');
+            const errText = document.getElementById('err-text');
+
+            // Message container
+            const messageBanner = document.getElementById('form-message');
+
+            let isValid = true;
+
+            // Name Validate
+            if (name.value.trim() === '') {
+                errName.classList.remove('hidden');
+                name.classList.add('border-rose-500', 'bg-rose-50');
+                isValid = false;
+            } else {
+                errName.classList.add('hidden');
+                name.classList.remove('border-rose-500', 'bg-rose-50');
+            }
+
+            // Email Validate
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                errEmail.classList.remove('hidden');
+                email.classList.add('border-rose-500', 'bg-rose-50');
+                isValid = false;
+            } else {
+                errEmail.classList.add('hidden');
+                email.classList.remove('border-rose-500', 'bg-rose-50');
+            }
+
+            // Subject Validate
+            if (subject.value.trim() === '') {
+                errSubject.classList.remove('hidden');
+                subject.classList.add('border-rose-500', 'bg-rose-50');
+                isValid = false;
+            } else {
+                errSubject.classList.add('hidden');
+                subject.classList.remove('border-rose-500', 'bg-rose-50');
+            }
+
+            // Text Validate
+            if (text.value.trim() === '') {
+                errText.classList.remove('hidden');
+                text.classList.add('border-rose-500', 'bg-rose-50');
+                isValid = false;
+            } else {
+                errText.classList.add('hidden');
+                text.classList.remove('border-rose-500', 'bg-rose-50');
+            }
+
+            if (isValid) {
+                // Show success banner
+                messageBanner.className = 'mb-6 p-4 rounded-xl text-sm font-semibold bg-emerald-100 border border-emerald-300 text-emerald-900 animate-fade-in-up';
+                messageBanner.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                        <span>¡Mensaje Simulado Correctamente! Gracias, <strong>${name.value.trim()}</strong>. Tu propuesta ha sido capturada de forma óptima.</span>
+                    </div>
+                `;
+                messageBanner.classList.remove('hidden');
+
+                // Clear fields
+                name.value = '';
+                email.value = '';
+                subject.value = '';
+                text.value = '';
+
+                // Scroll to message
+                messageBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                // Show error banner
+                messageBanner.className = 'mb-6 p-4 rounded-xl text-sm font-semibold bg-rose-100 border border-rose-300 text-rose-900 animate-fade-in-up';
+                messageBanner.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-triangle-exclamation text-rose-600 text-base"></i>
+                        <span>Hay campos con errores o vacíos en el formulario. Por favor, revíselos antes de continuar.</span>
+                    </div>
+                `;
+                messageBanner.classList.remove('hidden');
+            }
+        }
+
+        // WINDOW ONLOAD INITIALIZATIONS
+        window.onload = function() {
+            renderExcelTable();
+            updateDocPreview();
+        };
+    </script>
+</body>
+</html>
